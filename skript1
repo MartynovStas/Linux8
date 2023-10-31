@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read -p "Введите директорию" DELDIR
+if [ -e $DELDIR ]
+        then
+                echo "Деректория указанна верно"
+                cd $DELDIR
+                echo "Удаление"
+                rm -v *.bak *.tmp *.backup
+                echo "Удаление выполнено с oшибкой 0"
+        else
+                echo "Указанной дериктории нет"
+                exit
+fi
