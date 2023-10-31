@@ -1,0 +1,10 @@
+#!/bin/bash
+
+folder_path="/root/script"
+
+find "$folder_path" -type f | while read -r file
+do
+        owner=$(stat -c %U "$file")
+        mkdir -p "${folder_path}/${owner}"
+        cp "$file" "${folder_path}/${owner}"
+done
